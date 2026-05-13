@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+app.log
+pixelalchemy.db
+*.exe
+build/
+dist/
+*.spec
+.idea/
+.vscode/
