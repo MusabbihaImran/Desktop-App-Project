@@ -139,17 +139,13 @@ class FiltersLab(ttk.Frame):
         # self.update_previews()
 
     def _apply_sepia(self, img):
-        # simple sepia formula
-        width, height = img.size
-        pixels = img.load()
-        for py in range(height):
-            for px in range(width):
-                r, g, b = img.getpixel((px, py))
-                tr = int(0.393 * r + 0.769 * g + 0.189 * b)
-                tg = int(0.349 * r + 0.686 * g + 0.168 * b)
-                tb = int(0.272 * r + 0.534 * g + 0.131 * b)
-                pixels[px, py] = (min(255, tr), min(255, tg), min(255, tb))
-        return img
+        # Optimized sepia formula using PIL's color matrix for speed
+        sepia_matrix = (
+            0.393, 0.769, 0.189, 0,
+            0.349, 0.686, 0.168, 0,
+            0.272, 0.534, 0.131, 0
+        )
+        return img.convert("RGB", sepia_matrix)
 
     def _apply_pixelate(self, img):
         pixel_size = 10
