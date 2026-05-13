@@ -1,0 +1,4 @@
+2026-05-13 11:11:28,596 - INFO - Database initialized successfully.
+2026-05-13 11:11:28,597 - INFO - Application started
+2026-05-13 11:23:50,067 - INFO - Saved artwork: Trial
+2026-05-13 11:23:52,228 - INFO - Exported canvas to saved_art/Trial.png
