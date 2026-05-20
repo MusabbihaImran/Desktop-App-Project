@@ -1,0 +1,119 @@
+@startuml
+!define ARROW_THICKNESS 2
+!define ARROW_COLOR #1E40AF
+!define PRIMARY_COLOR #1E40AF
+!define SECONDARY_COLOR #1E3A8A
+!define BG_COLOR #FFFFFF
+!define BORDER_COLOR #475569
+!define TEXT_COLOR #0F172A
+
+skinparam dpi 300
+skinparam backgroundColor BG_COLOR
+skinparam defaultFontName "Arial", sans-serif
+skinparam defaultFontSize 15
+skinparam defaultFontColor TEXT_COLOR
+
+' Title styling
+skinparam titleFontName "Arial", sans-serif
+skinparam titleFontSize 28
+skinparam titleFontColor SECONDARY_COLOR
+skinparam titleBorderThickness 1
+skinparam titleBorderColor BORDER_COLOR
+skinparam titleBackgroundColor BG_COLOR
+
+' Arrow styling
+skinparam ArrowColor ARROW_COLOR
+skinparam ArrowThickness ARROW_THICKNESS
+skinparam ArrowFontColor TEXT_COLOR
+skinparam ArrowFontSize 13
+skinparam stereotypeFontColor TEXT_COLOR
+skinparam stereotypeFontSize 12
+
+' Class styling - Enhanced
+skinparam class {
+    BackgroundColor #EBF3FF
+    BorderColor PRIMARY_COLOR
+    BorderThickness 2
+    HeaderBackgroundColor #DCE8F8
+    HeaderBorderColor PRIMARY_COLOR
+    HeaderBorderThickness 2
+    FontSize 14
+    AttributeFontSize 13
+    MethodFontSize 13
+    FontColor TEXT_COLOR
+    StereotypeFontSize 12
+    ArrowColor ARROW_COLOR
+}
+
+title PixelAlchemy: Class Diagram
+
+class PixelAlchemyApp {
+  + start()
+  + stop()
+  + switch_tab(tab_name: String)
+}
+
+class CanvasEditor {
+  - canvas: Canvas
+  - current_tool: String
+  - color: Color
+  + draw_pixel(x, y)
+  + use_eraser(x, y)
+  + fill_bucket(x, y)
+  + undo()
+  + redo()
+  + save_artwork()
+}
+
+class FiltersLab {
+  - loaded_image: Image
+  - current_filter: String
+  + load_image(filepath)
+  + select_filter(filter_name)
+  + apply_filter()
+  + show_preview()
+  + save_filtered_image()
+}
+
+class ColorTheory {
+  - current_color: Color
+  + view_color_wheel()
+  + generate_palette()
+  + take_quiz()
+}
+
+class PatternMaker {
+  - pattern_settings: Dict
+  + generate_pattern()
+  + modify_parameters()
+  + export_pattern()
+}
+
+class Gallery {
+  - artworks: List<Artwork>
+  + view_gallery()
+  + load_artwork(id)
+  + delete_artwork(id)
+}
+
+class DatabaseManager {
+  - db_connection: Connection
+  + connect()
+  + save_image(data)
+  + load_images(): List
+  + delete_image(id)
+}
+
+PixelAlchemyApp *-- CanvasEditor
+PixelAlchemyApp *-- FiltersLab
+PixelAlchemyApp *-- ColorTheory
+PixelAlchemyApp *-- PatternMaker
+PixelAlchemyApp *-- Gallery
+
+CanvasEditor ..> DatabaseManager : <<use>>
+FiltersLab ..> DatabaseManager : <<use>>
+ColorTheory ..> DatabaseManager : <<use>>
+PatternMaker ..> DatabaseManager : <<use>>
+Gallery ..> DatabaseManager : <<use>>
+
+@enduml

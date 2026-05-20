@@ -1,0 +1,118 @@
+@startuml
+!define ARROW_THICKNESS 2
+!define ARROW_COLOR #1E40AF
+!define PRIMARY_COLOR #1E40AF
+!define SECONDARY_COLOR #1E3A8A
+!define BG_COLOR #FFFFFF
+!define BORDER_COLOR #475569
+!define TEXT_COLOR #0F172A
+
+skinparam dpi 340
+skinparam backgroundColor BG_COLOR
+skinparam defaultFontName "Arial", sans-serif
+skinparam defaultFontSize 16
+skinparam defaultFontColor TEXT_COLOR
+
+' Title styling
+skinparam titleFontName "Arial", sans-serif
+skinparam titleFontSize 28
+skinparam titleFontColor SECONDARY_COLOR
+skinparam titleBorderThickness 1
+skinparam titleBorderColor BORDER_COLOR
+skinparam titleBackgroundColor BG_COLOR
+
+' Arrow styling
+skinparam ArrowColor ARROW_COLOR
+skinparam ArrowThickness ARROW_THICKNESS
+skinparam ArrowFontColor TEXT_COLOR
+skinparam ArrowFontSize 14
+skinparam stereotypeFontColor TEXT_COLOR
+skinparam stereotypeFontSize 12
+
+' Actor styling - Enhanced
+skinparam actor {
+    BackgroundColor #DCE8F8
+    BorderColor PRIMARY_COLOR
+    BorderThickness 2.5
+    FontColor TEXT_COLOR
+    FontSize 16
+    FontStyle bold
+}
+
+' Usecase styling - Enhanced
+skinparam usecase {
+    BackgroundColor #EBF3FF
+    BorderColor PRIMARY_COLOR
+    BorderThickness 2
+    FontSize 14
+    FontColor TEXT_COLOR
+}
+
+' Rectangle styling - Enhanced
+skinparam rectangle {
+    BackgroundColor BG_COLOR
+    BorderColor BORDER_COLOR
+    BorderThickness 2.5
+    FontSize 16
+    FontColor TEXT_COLOR
+    FontStyle bold
+}
+
+title PixelAlchemy: Use Case Diagram
+
+left to right direction
+actor User
+
+rectangle "PixelAlchemy System" {
+  ' Column 1: Canvas Editor Actions
+  usecase "Draw Pixel Art" as UC1
+  usecase "Use Eraser" as UC2
+  usecase "Fill Bucket" as UC3
+  usecase "Undo/Redo" as UC4
+  usecase "Save Artwork" as UC5
+  
+  ' Column 2: Filters & Color Theory
+  usecase "Load Image" as UC6
+  usecase "Apply Filter" as UC7
+  usecase "Save Filtered Image" as UC8
+  usecase "View Color Wheel" as UC9
+  usecase "Take Quiz" as UC10
+  
+  ' Column 3: Pattern Maker & Gallery
+  usecase "Generate Pattern" as UC11
+  usecase "Export Pattern" as UC12
+  usecase "View Gallery" as UC13
+  usecase "Delete Artwork" as UC14
+
+  ' Horizontal hidden anchors to form 3 clean columns
+  UC1 -[hidden]right-> UC6
+  UC6 -[hidden]right-> UC11
+  
+  UC2 -[hidden]right-> UC7
+  UC7 -[hidden]right-> UC12
+  
+  UC3 -[hidden]right-> UC8
+  UC8 -[hidden]right-> UC13
+  
+  UC4 -[hidden]right-> UC9
+  UC9 -[hidden]right-> UC14
+  
+  UC5 -[hidden]right-> UC10
+}
+
+User --> UC1
+User --> UC2
+User --> UC3
+User --> UC4
+User --> UC5
+User --> UC6
+User --> UC7
+User --> UC8
+User --> UC9
+User --> UC10
+User --> UC11
+User --> UC12
+User --> UC13
+User --> UC14
+
+@enduml

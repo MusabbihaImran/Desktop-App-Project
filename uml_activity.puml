@@ -1,0 +1,81 @@
+@startuml
+!define ARROW_THICKNESS 2
+!define ARROW_COLOR #1E40AF
+!define PRIMARY_COLOR #1E40AF
+!define SECONDARY_COLOR #1E3A8A
+!define BG_COLOR #FFFFFF
+!define BORDER_COLOR #475569
+!define TEXT_COLOR #0F172A
+
+skinparam dpi 300
+skinparam backgroundColor BG_COLOR
+skinparam defaultFontName "Arial", sans-serif
+skinparam defaultFontSize 15
+skinparam defaultFontColor TEXT_COLOR
+
+' Title styling
+skinparam titleFontName "Arial", sans-serif
+skinparam titleFontSize 28
+skinparam titleFontColor SECONDARY_COLOR
+skinparam titleBorderThickness 1
+skinparam titleBorderColor BORDER_COLOR
+skinparam titleBackgroundColor BG_COLOR
+
+' Arrow styling
+skinparam ArrowColor ARROW_COLOR
+skinparam ArrowThickness ARROW_THICKNESS
+skinparam ArrowFontColor TEXT_COLOR
+skinparam ArrowFontSize 13
+skinparam stereotypeFontColor TEXT_COLOR
+skinparam stereotypeFontSize 12
+
+' Activity styling - Enhanced
+skinparam activity {
+    BackgroundColor #EBF3FF
+    BorderColor PRIMARY_COLOR
+    BorderThickness 2
+    FontSize 14
+    FontColor TEXT_COLOR
+}
+
+' Activity Diamond styling
+skinparam activityDiamond {
+    BackgroundColor #EBF3FF
+    BorderColor PRIMARY_COLOR
+    BorderThickness 2
+    FontSize 13
+    FontColor TEXT_COLOR
+}
+
+' Start/End styling
+skinparam StartEnd {
+    BackgroundColor SECONDARY_COLOR
+    BorderColor SECONDARY_COLOR
+    BorderThickness 2
+}
+
+title PixelAlchemy: Activity Diagram - App Flow
+
+start
+:User opens app;
+:Selects a tab;
+
+switch (Tab Selection)
+case (Canvas Editor)
+  :Draw/Erase/Fill;
+case (Filters Lab)
+  :Load Image/Apply Filter;
+case (Color Theory)
+  :View Wheel/Take Quiz;
+case (Pattern Maker)
+  :Generate/Export Pattern;
+case (Gallery)
+  :View/Delete Artwork;
+endswitch
+
+:Saves result;
+:Views in Gallery;
+:Exits App;
+stop
+
+@enduml

@@ -1,0 +1,94 @@
+@startuml
+!define ARROW_THICKNESS 2
+!define ARROW_COLOR #1E40AF
+!define PRIMARY_COLOR #1E40AF
+!define SECONDARY_COLOR #1E3A8A
+!define BG_COLOR #FFFFFF
+!define BORDER_COLOR #475569
+!define TEXT_COLOR #0F172A
+
+skinparam dpi 300
+skinparam backgroundColor BG_COLOR
+skinparam defaultFontName "Arial", sans-serif
+skinparam defaultFontSize 15
+skinparam defaultFontColor TEXT_COLOR
+
+' Title styling
+skinparam titleFontName "Arial", sans-serif
+skinparam titleFontSize 28
+skinparam titleFontColor SECONDARY_COLOR
+skinparam titleBorderThickness 1
+skinparam titleBorderColor BORDER_COLOR
+skinparam titleBackgroundColor BG_COLOR
+
+' Arrow styling
+skinparam ArrowColor ARROW_COLOR
+skinparam ArrowThickness ARROW_THICKNESS
+skinparam ArrowFontColor TEXT_COLOR
+skinparam ArrowFontSize 13
+skinparam stereotypeFontColor TEXT_COLOR
+skinparam stereotypeFontSize 12
+
+' Participant styling - Enhanced
+skinparam participant {
+    BackgroundColor #EBF3FF
+    BorderColor PRIMARY_COLOR
+    BorderThickness 2.5
+    FontSize 14
+    FontColor TEXT_COLOR
+    FontStyle bold
+}
+
+' Actor styling - Enhanced
+skinparam actor {
+    BackgroundColor #DCE8F8
+    BorderColor PRIMARY_COLOR
+    BorderThickness 2.5
+    FontColor TEXT_COLOR
+    FontSize 16
+    FontStyle bold
+}
+
+' LifeLine styling
+skinparam LifeLine {
+    BorderColor #94A3B8
+    BorderThickness 1.5
+    BackgroundColor #F8FAFC
+}
+
+title PixelAlchemy: Sequence Diagram - Apply Image Filter
+
+actor User
+participant "FiltersLab" as FL
+participant "PIL/Pillow" as PIL
+participant "DatabaseManager" as DB
+
+User -> FL: Load Image
+activate FL
+FL --> User: Image Loaded
+deactivate FL
+
+User -> FL: Select Filter
+activate FL
+FL --> User: Filter Selected
+deactivate FL
+
+User -> FL: Apply Filter
+activate FL
+FL -> PIL: Process Image (Threaded)
+activate PIL
+PIL --> FL: Filtered Image Data
+deactivate PIL
+FL --> User: Show Preview
+deactivate FL
+
+User -> FL: Save Filtered Image
+activate FL
+FL -> DB: save_image(data)
+activate DB
+DB --> FL: Success
+deactivate DB
+FL --> User: Confirmation
+deactivate FL
+
+@enduml

@@ -1,0 +1,45 @@
+2026-05-20 11:29:04,106 - INFO - ================================================================================
+2026-05-20 11:29:04,106 - INFO - Starting PixelAlchemy Gallery Export API v1.0
+2026-05-20 11:29:04,106 - INFO - Port: 5050
+2026-05-20 11:29:04,107 - INFO - Database: C:\Users\HP 840 G7\PyCharmMiscProject\Desktop-App-Project\PixelAlchemy\microservice\..\pixelalchemy.db
+2026-05-20 11:29:04,107 - INFO - Log file: C:\Users\HP 840 G7\PyCharmMiscProject\Desktop-App-Project\PixelAlchemy\microservice\service.log
+2026-05-20 11:29:04,107 - INFO - ================================================================================
+2026-05-20 11:29:04,322 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://192.168.100.34:5050
+2026-05-20 11:29:04,322 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-20 11:29:04,331 - INFO -  * Restarting with stat
+2026-05-20 11:29:05,026 - INFO - ================================================================================
+2026-05-20 11:29:05,027 - INFO - Starting PixelAlchemy Gallery Export API v1.0
+2026-05-20 11:29:05,027 - INFO - Port: 5050
+2026-05-20 11:29:05,027 - INFO - Database: C:\Users\HP 840 G7\PyCharmMiscProject\Desktop-App-Project\PixelAlchemy\microservice\..\pixelalchemy.db
+2026-05-20 11:29:05,027 - INFO - Log file: C:\Users\HP 840 G7\PyCharmMiscProject\Desktop-App-Project\PixelAlchemy\microservice\service.log
+2026-05-20 11:29:05,027 - INFO - ================================================================================
+2026-05-20 11:29:05,184 - WARNING -  * Debugger is active!
+2026-05-20 11:29:05,189 - INFO -  * Debugger PIN: 985-760-892
+2026-05-20 11:29:13,512 - INFO - GET /health - 200
+2026-05-20 11:29:13,514 - INFO - 127.0.0.1 - - [20/May/2026 11:29:13] "GET /health HTTP/1.1" 200 -
+2026-05-20 11:29:23,188 - INFO - GET /gallery - 200
+2026-05-20 11:29:23,189 - INFO - 127.0.0.1 - - [20/May/2026 11:29:23] "GET /gallery HTTP/1.1" 200 -
+2026-05-20 11:31:21,875 - INFO - GET /gallery - 200
+2026-05-20 11:31:21,877 - INFO - 127.0.0.1 - - [20/May/2026 11:31:21] "GET /gallery HTTP/1.1" 200 -
+2026-05-20 11:31:31,469 - INFO - GET /gallery/2 - 200
+2026-05-20 11:31:31,469 - INFO - 127.0.0.1 - - [20/May/2026 11:31:31] "GET /gallery/2 HTTP/1.1" 200 -
+2026-05-20 11:31:39,261 - INFO - GET /gallery/type/canvas - 200
+2026-05-20 11:31:39,262 - INFO - 127.0.0.1 - - [20/May/2026 11:31:39] "GET /gallery/type/canvas HTTP/1.1" 200 -
+2026-05-20 11:31:50,903 - WARNING - Invalid type requested: invalid
+2026-05-20 11:31:50,904 - INFO - GET /gallery/type/invalid - 400
+2026-05-20 11:31:50,906 - INFO - 127.0.0.1 - - [20/May/2026 11:31:50] "[31m[1mGET /gallery/type/invalid HTTP/1.1[0m" 400 -
+2026-05-20 11:32:33,596 - INFO - GET /gallery/stats - 200
+2026-05-20 11:32:33,597 - INFO - 127.0.0.1 - - [20/May/2026 11:32:33] "GET /gallery/stats HTTP/1.1" 200 -
+2026-05-20 11:33:51,153 - INFO - GET /gallery/export/json - 200
+2026-05-20 11:33:51,154 - INFO - 127.0.0.1 - - [20/May/2026 11:33:51] "GET /gallery/export/json HTTP/1.1" 200 -
+2026-05-20 11:58:53,558 - INFO - GET /gallery/export/json - 200
+2026-05-20 11:58:53,559 - INFO - 127.0.0.1 - - [20/May/2026 11:58:53] "GET /gallery/export/json HTTP/1.1" 200 -
+2026-05-20 12:02:01,058 - INFO - ZIP package generated. Included: 2, Missing: 0
+2026-05-20 12:02:01,058 - INFO - GET /gallery/export/zip - 200
+2026-05-20 12:02:01,059 - INFO - 127.0.0.1 - - [20/May/2026 12:02:01] "GET /gallery/export/zip HTTP/1.1" 200 -
+2026-05-20 12:02:16,247 - INFO - ZIP package generated. Included: 2, Missing: 0
+2026-05-20 12:02:16,248 - INFO - GET /gallery/export/zip - 200
+2026-05-20 12:02:16,248 - INFO - 127.0.0.1 - - [20/May/2026 12:02:16] "GET /gallery/export/zip HTTP/1.1" 200 -
