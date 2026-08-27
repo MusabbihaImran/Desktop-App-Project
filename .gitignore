@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDEs and editors
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Python packaging/build files
+*.exe
+build/
+dist/
+*.spec
+
+# OS-generated files
+.DS_Store
+Thumbs.db
